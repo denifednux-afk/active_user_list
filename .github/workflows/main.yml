@@ -32,6 +32,9 @@ jobs:
         run: |
           mkdir -p release
           cp index.html release/
+          cp config.json release/
+          cp README.txt release/
+          cp README.md release/
           cp -r assets release/
 
       - name: Create ZIP
