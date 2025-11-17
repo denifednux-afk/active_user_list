@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Active Users List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+<div id="root">
+  <div id="active-users"></div>
+</div>
+
+<!-- OneComme の SDK は普通の script でOK -->
+<script src="../__origin/js/onesdk.js"></script>
+
+<!-- ここだけを ES Modules として読み込む -->
+<script type="module" src="./assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    // ★ 追加：TS のソースと出力先
+    "rootDir": "./src",
+    "outDir": "./assets",
+
+    // ★ ブラウザで使う ES Modules にする
+    "module": "esnext",
+    "target": "es2017",
+
+    // あとは今の設定から必要そうなものだけ残す
+    "strict": true,
+    "skipLibCheck": true,
+
+    // なくてもいいけどそのままでもOKなやつ
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Reactは今回使わないので消してOK
+    // "jsx": "react-jsx",
+
+    // ESM用の設定たちはそのままでも可
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true
+  }
+}

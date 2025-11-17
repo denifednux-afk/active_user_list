@@ -1,0 +1,97 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    overflow: hidden;
+}
+
+#root {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+/* ====== ここから 2.5倍スケール ====== */
+#active-users {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* ⭐ 全体の拡大 */
+    transform: scale(2.5);
+    transform-origin: top left;
+
+    width: 260px;
+    max-height: 100vh;
+    padding: 8px 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0)
+    );
+    color: #fff;
+    font-size: 13px;
+}
+
+
+/* まずは top には何も付けない or かなり控えめにする */
+.active-user--top {
+    /* 必要なら太字くらいにしてもいい */
+    /* font-weight: 700; */
+}
+
+/* ★ 一番上 ＋ new のときだけ強調する */
+.active-user--top.active-user--new {
+    background: rgba(255, 215, 0, 0.45);
+    border-left: 3px solid #ffd700;
+}
+
+
+
+.active-user {
+    padding: 6px 10px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.45);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.active-user__icon {
+    width: 48px;      /* ← 必要に応じて変えられる */
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.active-user__name {
+    font-weight: 700;
+    font-size: 22px;  /* ← 大きめのバランス */
+    color: #fff;
+}
+.active-user--new {
+    outline: 2px solid #ffcc00;
+    animation: active-user-blink 1s infinite alternate;
+}
+
+@keyframes active-user-blink {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.03);
+        opacity: 0.7;
+    }
+}
