@@ -5,6 +5,10 @@ on:
     tags:
       - 'v*'
 
+# ★ ここを追加：リリース作成に必要な権限
+permissions:
+  contents: write
+
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
